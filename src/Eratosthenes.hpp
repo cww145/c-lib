@@ -2,7 +2,7 @@
 using namespace std;
 vector<int> Eratosthenes( const int N )
 {
-    vector<bool> is_prime( 10000 + 1 );
+    vector<bool> is_prime( N + 1 );
     for( int i = 0; i <= N; i++ )
     {
         is_prime[ i ] = true;
