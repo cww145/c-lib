@@ -1,13 +1,16 @@
-add_executable(Sample1.test Sample1.cpp)
+# src/Sample.hpp のテスト(test/Sample.cpp)用の設定
+add_executable(Sample.test Sample.cpp)
 add_test(
-    NAME TestSample1
-    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Sample1.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Sample1)
-add_custom_target(Sample1
-    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Sample1.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Sample1)
+    NAME TestSample
+    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Sample.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Sample)
+add_custom_target(Sample
+    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Sample.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Sample)
 
-add_executable(Sample2.test Sample2.cpp)
+# src/Eratosthenes.hpp のテスト(test/Eratosthenes.cpp)用の設定
+
+add_executable(Eratosthenes.test Eratosthenes.cpp)
 add_test(
-    NAME TestSample2
-    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Sample2.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Sample2)
-add_custom_target(Sample2
-    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Sample2.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Sample2)
+    NAME TestEratosthenes
+    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Eratosthenes.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Eratosthenes)
+add_custom_target(Eratosthenes
+    COMMAND oj t -c ${CMAKE_CURRENT_BINARY_DIR}/Eratosthenes.test -d ${CMAKE_CURRENT_SOURCE_DIR}/Eratosthenes)

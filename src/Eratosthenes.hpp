@@ -1,15 +1,13 @@
-#include <bits/stdc++.h>
-using namespace std;
-struct cww{cww(){ios::sync_with_stdio(false);cin.tie(0);}}star;
-//エラトステネスの篩
-vector<int> Eratosthenes( const int N )
+#include <vector>
+
+std::vector<int> Eratosthenes( const int N )
 {
-    vector<bool> is_prime( 10000 + 1 );
+    std::vector<bool> is_prime( N + 1 );
     for( int i = 0; i <= N; i++ )
     {
-        is_prime[ i ] = true;//初期化
+        is_prime[ i ] = true;
     }
-    vector<int> P;
+    std::vector<int> P;
     for( int i = 2; i <= N; i++ )
     {
         if( is_prime[ i ] )
@@ -22,14 +20,4 @@ vector<int> Eratosthenes( const int N )
         }
     }
     return P;
-}
-int main()
-{
-    int N;
-    cin >> N;
-    for( const auto &x: Eratosthenes( N ) )
-    {
-        cout << x << " ";
-    }
-    return 0;
 }
